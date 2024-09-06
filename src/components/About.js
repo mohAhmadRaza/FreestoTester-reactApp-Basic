@@ -1,39 +1,14 @@
-import React, { useState } from "react";
-
-export default function About() {
-  const [mystyle, setMyStyle] = useState({
-    color: "white",
-    backgroundColor: "black",
-  });
-
-  const [ButtonText, setButton] = useState("Enable Dark Mode");
-
-  const Trigger =()=>{
-    if(mystyle.color === "white"){
-        setMyStyle({
-            color : 'black',
-            backgroundColor: "white",
-        })
-        setButton("Enable Dark Mode")
-    }
-    else{
-        setMyStyle({
-            color : 'white',
-            backgroundColor: "black",
-        })
-        setButton("Enable Dark Mode")
-    }
-  }
-
+export default function About(props) {
+  
   return (
-    <div className="container" style={mystyle}>
+    <div className="container" style={props.mystyle}>
       <h1 className="my-4">About us</h1>
-      <div className="accordion" id="accordionExample" style={mystyle}>
+      <div className="accordion" id="accordionExample" style={props.mystyle}>
         <div className="accordion-item">
           <h2 className="accordion-header">
             <button
               className="accordion-button"
-              style={mystyle}
+              style={props.mystyle}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
@@ -46,7 +21,7 @@ export default function About() {
           <div
             id="collapseOne"
             className="accordion-collapse collapse show"
-            style={mystyle}
+            style={props.mystyle}
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
@@ -65,7 +40,7 @@ export default function About() {
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
-              style={mystyle}
+              style={props.mystyle}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
@@ -78,7 +53,7 @@ export default function About() {
           <div
             id="collapseTwo"
             className="accordion-collapse collapse"
-            style={mystyle}
+            style={props.mystyle}
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
@@ -97,7 +72,7 @@ export default function About() {
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
-              style={mystyle}
+              style={props.mystyle}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
@@ -110,7 +85,7 @@ export default function About() {
           <div
             id="collapseThree"
             className="accordion-collapse collapse"
-            style={mystyle}
+            style={props.mystyle}
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
@@ -125,11 +100,6 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="container my-4">
-        <button onClick={Trigger} type="button" className="btn btn-primary">
-          {ButtonText}
-        </button>
       </div>
     </div>
   );

@@ -17,6 +17,11 @@ export default function TextForm(probs) {
     setText(gmail.join(', '));
   };
 
+  const CleanText = () => {
+    let newText = text.split(/\s+/);
+    setText(newText.join(' '));
+  };
+
   const OnHandle = (event) => {
     setText(event.target.value);
   };
@@ -32,6 +37,8 @@ export default function TextForm(probs) {
         <button className="btn btn-primary mx-3" onClick={UpperCaseHandle}>Uppercase</button>
         <button className="btn btn-primary mx-3" onClick={LowerCaseHandle}>lowercase</button>
         <button className="btn btn-primary" onClick={GetGmail}>Get Gmail</button>
+        <button className="btn btn-primary" onClick={CleanText}>Clean Text</button>
+
       </div>
 
       <div className="container my-3">
