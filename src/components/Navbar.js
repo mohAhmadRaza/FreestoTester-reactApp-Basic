@@ -93,7 +93,10 @@ export default function Navbar(props) {
               <label class="form-check-label" htmlFor="flexSwitchCheckDefault">
                 {props.prompt}
               </label>
-            </div>
+              <button onClick={() => props.EnableSpecificMode('blue')} type="button" className="btn btn-primary mx-1">Blue Mode</button>
+              <button onClick={() => props.EnableSpecificMode('blue')} type="button" className="btn btn-success mx-1">Green Mode</button>
+              <button onClick={() => props.EnableSpecificMode('blue')} type="button" className="btn btn-warning mx-1">Yellow Mode</button>
+              </div>
           </div>
         </div>
       </nav>
