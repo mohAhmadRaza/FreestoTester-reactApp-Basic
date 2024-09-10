@@ -50,10 +50,26 @@ function App() {
     }
   };
   
-  const EnableSpecificMode = (newMode) => {
-    setMode(newMode); // Update the mode
-    document.body.style.backgroundColor = newMode; // Use the newMode directly
-    showAlert(`${newMode.charAt(0).toUpperCase() + newMode.slice(1)} mode enabled`, "success");
+  const GreenMode = () => {
+    document.body.style.backgroundColor = 'green'; // Use the newMode directly
+    setMyStyle({
+      color : 'green',
+      text : 'white'
+    })
+  };
+  const BlueMode = () => {
+    document.body.style.backgroundColor = 'blue'; // Use the newMode directly
+    setMyStyle({
+      color : 'white',
+      backgroundColor: 'blue'
+    })
+  };
+  const YellowMode = () => {
+    document.body.style.backgroundColor = 'yellow'; // Use the newMode directly
+    setMyStyle({
+      color : 'black',
+      backgroundColor: 'yellow'
+    })
   };
 
   return (
@@ -64,7 +80,9 @@ function App() {
         mode={mode} 
         toogleMode={toggleMode} 
         prompt={prompt} 
-        EnableSpecificMode={EnableSpecificMode}
+        GreenMode={GreenMode}
+        BlueMode={BlueMode}
+        YellowMode={YellowMode}
       />
       <Alert alert={alert} />
       <About mystyle={mystyle} />
