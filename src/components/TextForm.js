@@ -22,6 +22,10 @@ export default function TextForm(probs) {
     setText(newText.join(' '));
   };
 
+  const ClearText = () => {
+    setText('');
+  };
+
   const OnHandle = (event) => {
     setText(event.target.value);
   };
@@ -36,14 +40,14 @@ export default function TextForm(probs) {
         </div>
         <button className="btn btn-primary mx-3" onClick={UpperCaseHandle}>Uppercase</button>
         <button className="btn btn-primary mx-3" onClick={LowerCaseHandle}>lowercase</button>
-        <button className="btn btn-primary" onClick={GetGmail}>Get Gmail</button>
-        <button className="btn btn-primary" onClick={CleanText}>Clean Text</button>
-
+        <button className="btn btn-primary mx-3" onClick={GetGmail}>Get Gmail</button>
+        <button className="btn btn-primary mx-3" onClick={CleanText}>Clean Text</button>
+        <button className="btn btn-primary mx-3" onClick={ClearText}>Clear Text</button>
       </div>
 
       <div className="container my-3">
         <h1>You Text Summary</h1>
-        <p>{text.split(" ").length-1} words and {text.length} Characters </p>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} Characters </p>
         <p>{0.0010 * text.split(" ").length} minutes to read full</p>
         <h2>Preview</h2>
         <p>{text}</p>
